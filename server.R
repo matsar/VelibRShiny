@@ -11,6 +11,9 @@
 # Auteur : CEPE gpe 1
 ###############################################################################.
 
+require(shiny)
+require(leaflet)
+
 shinyServer(function(input, output) {
   
   carteL<-reactive({

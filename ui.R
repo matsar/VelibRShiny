@@ -10,6 +10,9 @@
 #
 # Auteur : CEPE gpe 1
 ###############################################################################.
+
+require(shiny)
+require(leaflet)
   
   # Application title
   shinyUI(fluidPage(

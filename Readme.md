@@ -3,6 +3,8 @@ VelibRShiny
 
 Projet expérimental
 
+https://matsar.shinyapps.io/VelibRShiny/
+
 ## Version 0.1 (version "première journée" du 27/02/2016)
  - Déconnexion des API (version statique)
  - Réorganisation du code présent dans global.R (création de fonctions.R) 
