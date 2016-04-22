@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# encoding: utf-8\n###############################################################################.\n#\n# Titre : global.R\n# \n# Theme : Data Science - projet VelibR\n#\n# Creation : 27 février 2016\n# MAJ : 6 mars 2016\n#\n# Auteur : CEPE gpe 1\n###############################################################################.\n\n\n\n# Descriptif :Initialisation de l'appli Shiny\n###############################################################################.\n\n\n# Chargement des packages et fonctions -----------------------------------------\n\n# TODO{2016-03-06, Matthieu}: identifier les packages réellement utilisés\nlibrary(shiny)\nlibrary(dplyr)\nrequire(plyr)\nrequire(stringr)\nlibrary(lubridate)\nrequire(rgbif) #il faut passer par le zip!\nlibrary(ggmap)\nrequire(dismo)\nrequire(rgdal)\nrequire(leaflet)\n\nlibrary(XML) # shinyapps le réclame\n\nsource(\"fonctions.R\") # nos fonctions\n\n\n# Chargement des données Velib -------------------------------------------------\n\n# Chargement statique des données prétraitées\nload(\"data/velibsFormate.RData\") # --> charge velibs2\n\n# Rq : Chargement dynamique désactivé pour le github provisoirement\n# TODO : à réactiver\n\n## Ajout des altitudes (désactivé pour l'instant car trop long)\n#elevs<-sapply(1:nrow(velibs2), FUN=elevationAnne) ##recuperation des altitudes de stations velibs\n#velibs2<-data.frame(velibs2, elevation=elevs)\n\n\n# Chargement des données Autolib -----------------------------------------------\n\n# TODO : Autolib à ajouter\n",
+    "created" : 1457306979127.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4011345817",
+    "id" : "1F71EBDF",
+    "lastKnownWriteTime" : 1457307437,
+    "last_content_update" : 1457307437908,
+    "path" : "~/GitHub/VelibRShiny/global.R",
+    "project_path" : "global.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

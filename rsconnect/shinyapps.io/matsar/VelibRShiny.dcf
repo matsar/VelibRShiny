@@ -2,8 +2,8 @@ name: VelibRShiny
 account: matsar
 server: shinyapps.io
 appId: 87508
-bundleId: 388917
+bundleId: 429943
 url: https://matsar.shinyapps.io/VelibRShiny/
-when: 1457305879.56912
+when: 1461355631.84145
 asMultiple: FALSE
 asStatic: FALSE

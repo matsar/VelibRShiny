@@ -5,8 +5,8 @@
 # 
 # Theme : Data Science - projet VelibR
 #
-# Creation : 27 février 2016
-# MAJ : 6 mars 2016
+# Creation : 27 fÃ©vrier 2016
+# MAJ : 22/04/2016
 #
 # Auteur : CEPE gpe 1
 ###############################################################################.
@@ -19,7 +19,7 @@
 
 # Chargement des packages et fonctions -----------------------------------------
 
-# TODO{2016-03-06, Matthieu}: identifier les packages réellement utilisés
+# TODO{2016-03-06, Matthieu}: identifier les packages rÃ©ellement utilisÃ©s
 library(shiny)
 library(dplyr)
 require(plyr)
@@ -31,22 +31,24 @@ require(dismo)
 require(rgdal)
 require(leaflet)
 
+library(XML) # shinyapps le rÃ©clame
+
 source("fonctions.R") # nos fonctions
 
 
-# Chargement des données Velib -------------------------------------------------
+# Chargement des donnÃ©es Velib -------------------------------------------------
 
-# Chargement statique des données prétraitées
+# Chargement statique des donnÃ©es prÃ©traitÃ©es
 load("data/velibsFormate.RData") # --> charge velibs2
 
-# Rq : Chargement dynamique désactivé pour le github provisoirement
-# TODO : à réactiver
+# Rq : Chargement dynamique dÃ©sactivÃ© pour le github provisoirement
+# TODO : Ã  rÃ©activer
 
-## Ajout des altitudes (désactivé pour l'instant car trop long)
+## Ajout des altitudes (dÃ©sactivÃ© pour l'instant car trop long)
 #elevs<-sapply(1:nrow(velibs2), FUN=elevationAnne) ##recuperation des altitudes de stations velibs
 #velibs2<-data.frame(velibs2, elevation=elevs)
 
 
-# Chargement des données Autolib -----------------------------------------------
+# Chargement des donnÃ©es Autolib -----------------------------------------------
 
-# TODO : Autolib à ajouter
+load("data/autolibsFormate.RData") # --> charge autolibs2

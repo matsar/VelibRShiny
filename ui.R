@@ -6,7 +6,7 @@
 # Theme : Data Science - projet VelibR
 #
 # Creation : 27 février 2016
-# MAJ : 27 février 2016
+# MAJ : 22/04/2016
 #
 # Auteur : CEPE gpe 1
 ###############################################################################.
@@ -42,8 +42,8 @@ require(leaflet)
              ),
              wellPanel(
                checkboxGroupInput("modeTransport", label = h3("Mode de transport"), 
-                                  choices = list("Velib" = 1, "Autolib" = 2),
-                                  selected = character(0), inline=TRUE)
+                                  choices = list("Velib" = "vel", "Autolib" = "auto"),
+                                  selected = "vel", inline=TRUE)
              ),
              wellPanel(
                h3("Depart", align = "center"),

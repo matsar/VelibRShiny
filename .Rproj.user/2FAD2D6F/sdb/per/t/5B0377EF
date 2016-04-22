@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# encoding: utf-8\n###############################################################################.\n#\n# Titre : ui.R\n# \n# Theme : Data Science - projet VelibR\n#\n# Creation : 27 février 2016\n# MAJ : 27 février 2016\n#\n# Auteur : CEPE gpe 1\n###############################################################################.\n\nrequire(shiny)\nrequire(leaflet)\n  \n  # Application title\n  shinyUI(fluidPage(\n    h1(titlePanel(\"Lib R dans Paris\")),\n    fluidRow(\n      column(4,\n             wellPanel(\n              radioButtons(\"objet\", \"Que voulez vous?\", c(\"Autour de\",\"Itineraire\"), selected = \"Autour de\", inline = TRUE, width = NULL),\n              #hr(),\n              #img(src='D:/TP20160227/DATA/Geo.png', height = 10, width = 10, align = \"right\"),\n              hr(),\n              actionButton(\"Geo\", label = img(src=\"geo.png\", height = 20, width = 20)),\n              textInput(\"addresse1\", \"Depart\", value = \"10 Rue de Rivoli, Paris\"), \n          \n              conditionalPanel(condition = \"input.objet == 'Itineraire'\", textInput(\"addresse2\", \"Arrivee\", value = \"60 rue Etienne Dolet, Malakoff\")),\n              hr(),\n              dateInput('dateTime',\n                         label = \"Date\",\n                         value = as.character(Sys.Date()),\n                         min = Sys.Date(), max = Sys.Date() + 30,\n                         format = \"dd/mm/yyyy\",\n                         startview = 'year', language = 'fr', weekstart = 1 ),\n              textInput(\"heure\", \"Heure\", value = as.character(strftime(Sys.time(), format=\"%H:%M\"))),\n              conditionalPanel(condition = \"input.objet == 'Itineraire'\", \n                               hr(),\n                               div(actionButton(\"rapide\", label = \"+ rapide\"),actionButton(\"court\", label = \"+ court\")))\n             ),\n             wellPanel(\n               checkboxGroupInput(\"modeTransport\", label = h3(\"Mode de transport\"), \n                                  choices = list(\"Velib\" = 1, \"Autolib\" = 2),\n                                  selected = character(0), inline=TRUE)\n             ),\n             wellPanel(\n               h3(\"Depart\", align = \"center\"),\n               checkboxInput(\"procheDepart\", label = \"Le plus proche\", value = FALSE),\n               sliderInput(\"sliderDepart\",\"Nombre de velos disponibles\",min=0,max=25,value=1)\n             ),\n             conditionalPanel(condition = \"input.objet == 'Itineraire'\", wellPanel(\n               h3(\"Arrivée\", align = \"center\"),\n               checkboxInput(\"procheArrivee\", label = \"Le plus proche\", value = FALSE),\n               sliderInput(\"sliderArrivee\",\"Nombre de places disponibles\",min=0,max=25,value=1),\n               tags$small(paste0(\n                 \"Attention: les places peuvent être prises d'assaut pendant que \",\n                 \"vous flanez sur votre bicyclette.\"\n               ))\n              ))\n      ),\n    \n      column(8,\n             leafletOutput(\"carte\", height = 700),\n               column(6,\n                      h3(\"Départ\"),\n                      dataTableOutput(\"table_depart\")),\n             conditionalPanel(condition = \"input.objet == 'Itineraire'\",column(6,\n                      h3(\"Arrivée\"),\n                      dataTableOutput(\"table_arrive\")))\n                \n             \n         \n      )\n  )\n  )\n  )\n",
+    "created" : 1457307336254.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3731212250",
+    "id" : "5B0377EF",
+    "lastKnownWriteTime" : 1457306629,
+    "last_content_update" : 1457306629,
+    "path" : "~/GitHub/VelibRShiny/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

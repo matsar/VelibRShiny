@@ -6,7 +6,7 @@
 # Theme : Data Science - projet VelibR
 #
 # Creation : 6 mars 2016
-# MAJ : 6 mars 2016
+# MAJ : 22/04/2016
 #
 # Auteur : CEPE gpe 1
 ###############################################################################.
@@ -26,11 +26,12 @@
 # #les donnes d origine 
 # velibs<-read.csv("data/stations-velib-disponibilites-en-temps-reel.csv", sep=";")
 # autolibs<-read.csv("data/stations_et_espaces_autolib_de_la_metropole_parisienne.csv", sep=";")
+# colnames(autolibs)[6] <- "Coordonnees.geo"
 # 
 # ###--------------Mise en forme de la table autolib 
-# coordAuto<-str_split_fixed(autolibs$Coordonnées.geo, pattern=",", n=2)%>%as.matrix%>%apply(as.numeric, MARGIN=2)
+# coordAuto<-str_split_fixed(autolibs$Coordonnees.geo, pattern=",", n=2)%>%as.matrix%>%apply(as.numeric, MARGIN=2)
 # autolibs2<-data.frame(autolibs, latitude=coordAuto[,1], longitude=coordAuto[,2] )
-# 
+# save(autolibs2, file="data/autolibsFormate.RData") 
 # 
 # 
 # ##-------------------Pretraitement sur les velibs 
@@ -46,7 +47,7 @@
 #                                 hour=hour(datetime),
 #                                 minute=minute(datetime))
 
-#save(velibs2, file="velibsFormate.RData") 
+#save(velibs2, file="data/velibsFormate.RData") 
 ##############----------------
 
 
@@ -73,7 +74,7 @@ rechercheVelib<-function(adresse,
                          nb=5){
   # recherche des n stations Velib (ou Autolib) les plus proches d'une adresse
   
-  coord<-geocode(adresse )
+  coord<-geocode(adresse)
   table.out<-table%>%
     mutate(distance=sqrt((latitude-coord$lat)^2 + (longitude-coord$lon)^2))%>%
     arrange(distance)
