@@ -17,7 +17,7 @@ https://matsar.shinyapps.io/VelibRShiny/
 ## TODO Version 0.3 (à venir)
  - Ajouter itineraire +court +rapide
  - Pointer sur la carte la geolocalisaion
- - Centrer la carte sur adresse déparrt
+ - Centrer la carte sur adresse départ
  - Itineraire entre station velib et non adresse entrée
  - Afficher temps de parcours
- - Intégrer fonction le plus proche (afficher station depart + station arrivé) et supprimer tableau
+ - Intégrer fonction le plus proche (afficher station depart + station arrivée) et supprimer tableau
