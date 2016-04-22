@@ -9,7 +9,12 @@ https://matsar.shinyapps.io/VelibRShiny/
  - Déconnexion des API (version statique)
  - Réorganisation du code présent dans global.R (création de fonctions.R) 
  
-## TODO Version 0.2 (à venir)
+ 
+## Version 0.2 (version "première journée" améliorée du 22/04/2016)
+ - Point de départ et arrivée sur la carte
+ - Ajout des autolibs
+ 
+## TODO Version 0.3 (à venir)
  - Ajouter itineraire +court +rapide
  - Pointer sur la carte la geolocalisaion
  - Centrer la carte sur adresse déparrt
